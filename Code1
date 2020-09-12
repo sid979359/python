@@ -1,0 +1,22 @@
+def xgcd(a,b) ->(int,int,int):
+    x=1
+    g=a
+    v=0
+    w=b
+    while(True):
+        if (w==0):
+            try:
+                y=int((g-a*x)/b)
+            except:
+                print("You can't take b as 0")
+                return 0,0,0
+            return g,x,y
+        else:
+            q=g//w
+            t=g%w
+            s=x-q*v
+            x,g=v,w
+            v,w=s,t
+            print(g,w,x,v,s,t,q)
+            
+xgcd(172,22)  
